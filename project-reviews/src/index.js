@@ -13,31 +13,38 @@ import ProtectedComponent from "./components/ProtectedComponent";
 import SecondPage from "./containers/SecondPage";
 import HomePage from "./containers/HomePage";
 
+// import store dan Provider
+import { Provider } from "react-redux";
+import { store } from "./app/store";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route
-          path="/"
-          element={
-            <ProtectedComponent>
-              <HomePage />
-            </ProtectedComponent>
-          }
-        />
-        <Route
-          path="/second"
-          element={
-            <ProtectedComponent>
-              <SecondPage />
-            </ProtectedComponent>
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+    {/* Inject Provider */}
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedComponent>
+                <HomePage />
+              </ProtectedComponent>
+            }
+          />
+          <Route
+            path="/second"
+            element={
+              <ProtectedComponent>
+                <SecondPage />
+              </ProtectedComponent>
+            }
+          />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
