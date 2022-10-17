@@ -12,3 +12,15 @@ Kemudian package untuk styling nya adalah:
 - postcss 
 - autoprefixer
 - @iconfify/react
+
+File modified (step)
+1. `/src/authentication/firebase.js`
+1. `/src/components/LoginForm.jsx`
+1. `/src/components/RegisterForm.jsx`
+1. `/src/services/jikanAPI.js`
+1. `/src/app/store.js`
+1. `/src/index.js`
+1. `/src/containers/HomePage.jsx`
+1. `/src/services/reqresinAPI.js`
+1. `/src/app/store.js`
+1. `/src/containers/SecondPage.jsx`
